@@ -4,12 +4,18 @@ const run = {
   server: {
     port: 3000
   },
+  keepsecrets:{
+    signature: process.env.JWT_KEY || 'MySuperSecret',
+  }
 }
 
 const test = {
   server: {
     port: 3000
   },
+  keepsecrets:{
+    signature: 'MySuperSecret',
+  }
 }
 
 const config = {
