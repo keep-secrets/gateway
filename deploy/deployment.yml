@@ -17,6 +17,9 @@ spec:
       containers:
         - name: $APP_NAME
           image: $REGISTRY_URI/$APP_NAME:latest
+          env:
+            - name: JWT_KEY
+              value: "$JWT_KEY"
           ports:
             - containerPort: 3000
           imagePullPolicy: Always

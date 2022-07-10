@@ -37,10 +37,11 @@ jobs:
           SECRET: ${{ secrets.SECRET }}
           APP_NAME: ${{ github.event.repository.name }}
           REGISTRY_URI: ${{ secrets.REGISTRY_URI }}
+          JWT_KEY: ${{ secrets.JWT_KEY }}
         with:
           input: ./deploy/deployment.yml
           output: deploy.yml
- 
+
       - name: Save DigitalOcean kubeconfig
         run: doctl kubernetes cluster kubeconfig save $CLUSTER_NAME
         env:
